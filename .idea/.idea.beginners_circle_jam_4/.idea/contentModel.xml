@@ -6,7 +6,10 @@
     <e p="X:\Projects\beginners_circle_jam_4" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
-        <e p="PlayerController.cs" t="Include" />
+        <e p="Scripts" t="Include">
+          <e p="CameraFolower.cs" t="Include" />
+          <e p="PlayerController.cs" t="Include" />
+        </e>
       </e>
       <e p="beginners_circle_jam_4.sln" t="IncludeFlat" />
       <e p="obj" t="ExcludeRecursive" />

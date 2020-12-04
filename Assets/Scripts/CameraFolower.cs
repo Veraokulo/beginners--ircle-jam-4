@@ -1,17 +1,19 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.InteropServices;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CameraFolower : MonoBehaviour
 {
     public GameObject player;
 
-    // Update is called once per frame
+    void Start()
+    {
+        player = FindObjectOfType<Player>().gameObject;
+    }
+
     void LateUpdate()
     {
         var playerPosition = player.transform.position;
-        playerPosition.z = transform.position.z;
-        transform.position = playerPosition;
+        transform.position = new Vector3(playerPosition.x, playerPosition.y, -50);
+        var playerRotation = player.transform.rotation.eulerAngles;
+        transform.rotation = Quaternion.Euler(new Vector3(0, 0, playerRotation.z));
     }
 }

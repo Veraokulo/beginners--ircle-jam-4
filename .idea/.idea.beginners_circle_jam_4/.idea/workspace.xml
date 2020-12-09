@@ -26,28 +26,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="86456c84-e1ad-479c-8e4f-3f4a457fdc22" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.beginners_circle_jam_4/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.beginners_circle_jam_4/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.beginners_circle_jam_4/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.beginners_circle_jam_4/.idea/indexLayout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.beginners_circle_jam_4/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_30_2020_10_09_PM__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.beginners_circle_jam_4/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_30_2020_10_09_PM__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.beginners_circle_jam_4/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_30_2020_10_09_PM_[Default_Changelist]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.beginners_circle_jam_4/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_30_2020_10_09_PM__Default_Changelist_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.beginners_circle_jam_4/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.beginners_circle_jam_4/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.beginners_circle_jam_4/riderModule.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.beginners_circle_jam_4/riderModule.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/ship.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/ship.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/ship.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/ship.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GravityGun.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GravityGun.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Items/Chest box 1.blend.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Items/Chest box 1.blend.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Test locate.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Test locate.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/VeraokulosTestingScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/VeraokulosTestingScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CameraFolower.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CameraFolower.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shaders/Materials.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shaders/Materials/check 1.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shaders/Materials/check 1.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shaders/Materials/check 2.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shaders/Materials/check 2.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shaders/Materials/check.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shaders/Materials/check.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,9 +61,9 @@
         <option value="$PROJECT_DIR$/Assets/test.cs" />
         <option value="$PROJECT_DIR$/Assets/Player.cs" />
         <option value="$PROJECT_DIR$/Assets/q.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/CameraFolower.cs" />
         <option value="$PROJECT_DIR$/Assets/GravityGun.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/CameraFolower.cs" />
       </list>
     </option>
   </component>
@@ -138,7 +125,7 @@
       <workItem from="1607202661283" duration="31000" />
       <workItem from="1607202722145" duration="1653000" />
       <workItem from="1607204418612" duration="2906000" />
-      <workItem from="1607273384726" duration="17179000" />
+      <workItem from="1607273384726" duration="24382000" />
     </task>
     <servers />
   </component>
@@ -175,6 +162,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1027" y="545" key="ANALYSIS_DLG_com.jetbrains.rider.actions.impl.cleanup.RiderCodeCleanupAction$actionPerformed$dlg$1/0.0.2560.1400@0.0.2560.1400" timestamp="1607117380007" />
+    <state x="801" y="276" key="CommitChangelistDialog2" timestamp="1607469825907">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="801" y="276" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1607469825907" />
     <state x="1114" y="416" key="RiderGenerateDialog" timestamp="1607201472501">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>

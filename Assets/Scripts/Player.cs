@@ -30,6 +30,9 @@ public class Player : MonoBehaviour
         Physics.Raycast(transform.position, -transform.up, out var hit,
             _distanceToTheGround + 0.05f);
 
+    private bool isResized;
+    public float resizingScale = 2f;
+
     private void Awake()
     {
         _rb = GetComponent<Rigidbody>();
@@ -51,10 +54,15 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.N)) gravityMode = GravityMode.None;
 
         if (Input.GetButtonDown("Jump") && IsGrounded) _jump = true;
-        var q = Input.GetAxisRaw("Horizontal");
-        if (q != 0)
+        if (Input.GetAxisRaw("Horizontal") != 0)
         {
             graphics.transform.localRotation = Quaternion.Euler(0, Input.GetAxisRaw("Horizontal") < 0 ? -90 : 90, 0);
+        }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            transform.localScale *= isResized ? resizingScale : 1/resizingScale;
+            isResized = !isResized;
         }
     }
 

@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class GravityGun : MonoBehaviour
 {
+    public float force = 8f;
     private Plane _plane;
     public List<Rigidbody> rigidbodies = new List<Rigidbody>();
 
@@ -42,14 +43,15 @@ public class GravityGun : MonoBehaviour
         {
             foreach (var rb in rigidbodies)
             {
-                rb.AddForce((transform.parent.position - rb.transform.position) * 8f);
+                rb.AddForce((transform.position - rb.transform.position) * force);
             }
         }
+        
         if (Input.GetMouseButton(1))
         {
             foreach (var rb in rigidbodies)
             {
-                rb.AddForce((rb.transform.position-transform.parent.position) * 8f);
+                rb.AddForce((rb.transform.position-transform.parent.parent.position) * force);
             }
         }
     }

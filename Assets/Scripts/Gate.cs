@@ -31,6 +31,7 @@ public class Gate : LinkedID
                 {
                     Open();
                     _player.Keys.Remove(id);
+                    GameManager.Instance.UpdateKeysInfo();
                 }
                 else
                 {

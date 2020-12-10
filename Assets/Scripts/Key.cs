@@ -9,6 +9,7 @@ public class Key : LinkedID
         {
             Player.Instance.Keys.Add(id);
             GameManager.Instance.UpdateKeysInfo();
+            GameManager.Instance.ShowMessage("You picked up key № " + id);
             Destroy(gameObject);
         }
     }

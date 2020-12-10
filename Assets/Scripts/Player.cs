@@ -3,9 +3,11 @@
 [RequireComponent(typeof(Rigidbody))]
 public class Player : MonoBehaviour
 {
+    public float Health = 100f;
     private Rigidbody _rb;
     public GameObject graphics;
     public Animator animator;
+    public HealthBar HealthBar;
     [Range(0, 10)] public float rotationSpeed = 5f;
 
     private bool _jump;
@@ -115,5 +117,20 @@ public class Player : MonoBehaviour
         _rb.velocity = horizontal + vertical;
 
         #endregion
+    }
+
+    public void TakeDamage(float damage)
+    {
+        Health -= damage;
+        HealthBar.SetHealth(Health);
+        if (Health <= 0)
+        {
+            Die();
+        }
+    }
+
+    private void Die()
+    {
+        Debug.Log("DIED!!!");
     }
 }

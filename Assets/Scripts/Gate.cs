@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider))]
@@ -9,11 +10,13 @@ public class Gate : MonoBehaviour
     public float openValue = 5f;
     public bool isOpened = false;
     private bool isPlayerNear = false;
+    private Collider _colliderToDisable;
 
     private void Start()
     {
         left = transform.GetChild(0).gameObject;
         right = transform.GetChild(1).gameObject;
+        _colliderToDisable = GetComponents<Collider>().First(_ => !_.isTrigger);
     }
 
     private void Update()
@@ -31,7 +34,8 @@ public class Gate : MonoBehaviour
     {
         left.transform.position -= left.transform.right * openValue;
         right.transform.position += right.transform.right * openValue;
-        isOpened = false;
+        isOpened = true;
+        _colliderToDisable.enabled = false;
     }
 
     private void OnTriggerEnter(Collider other)

@@ -42,8 +42,8 @@ public class GravityGun : MonoBehaviour
         if (Input.GetMouseButton(0))
         {
             foreach (var rb in rigidbodies)
-            {
-                rb.AddForce((transform.position - rb.transform.position) * force);
+            {    
+                rb.velocity = (transform.position - rb.transform.position) * force; 
             }
         }
         

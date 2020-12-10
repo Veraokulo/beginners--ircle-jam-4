@@ -3,7 +3,7 @@ using System.Linq;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider))]
-public class Gate : MonoBehaviour
+public class Gate : LinkedID
 {
     public GameObject left;
     public GameObject right;
@@ -11,12 +11,14 @@ public class Gate : MonoBehaviour
     public bool isOpened = false;
     private bool isPlayerNear = false;
     private Collider _colliderToDisable;
+    private Player _player;
 
     private void Start()
     {
         left = transform.GetChild(0).gameObject;
         right = transform.GetChild(1).gameObject;
         _colliderToDisable = GetComponents<Collider>().First(_ => !_.isTrigger);
+        _player = FindObjectOfType<Player>();
     }
 
     private void Update()
@@ -25,7 +27,15 @@ public class Gate : MonoBehaviour
         {
             if (!isOpened)
             {
-                Open();
+                if (_player.Keys.Contains(id))
+                {
+                    Open();
+                    _player.Keys.Remove(id);
+                }
+                else
+                {
+                    GameManager.Instance.ShowMessage("You do not have Key №" + id, 3f);
+                }
             }
         }
     }

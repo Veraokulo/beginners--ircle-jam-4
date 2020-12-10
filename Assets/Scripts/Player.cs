@@ -1,14 +1,17 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(Collider))]
-public class Player : MonoBehaviour
+public class Player : Singleton<Player>
 {
     public float Health = 100f;
+    public float Oxygen = 0f;
     private Rigidbody _rb;
     public GameObject graphics;
     public Animator animator;
     public HealthBar HealthBar;
+    public OxygenBar OxygenBar;
     [Range(0, 10)] public float rotationSpeed = 5f;
 
     private bool _jump;
@@ -28,6 +31,7 @@ public class Player : MonoBehaviour
     private static readonly int IsZeroGravity = Animator.StringToHash("isZeroGravity");
     private static readonly int Grounded = Animator.StringToHash("isGrounded");
     private static readonly int Jump = Animator.StringToHash("jump");
+    public List<int> Keys;
 
     private void Awake()
     {
@@ -124,6 +128,18 @@ public class Player : MonoBehaviour
     {
         Health -= damage;
         HealthBar.SetHealth(Health);
+        GameManager.Instance.SetColorFilter(Color.red);
+        if (Health <= 0)
+        {
+            Die();
+        }
+    }
+
+    public void TakeOxygen(float oxygen)
+    {
+        Oxygen -= oxygen;
+        OxygenBar.SetOxygen(Oxygen);
+        GameManager.Instance.SetColorFilter(Color.gray);
         if (Health <= 0)
         {
             Die();

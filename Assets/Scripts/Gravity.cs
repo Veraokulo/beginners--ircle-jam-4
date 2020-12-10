@@ -31,11 +31,11 @@ public class Gravity : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         Bodies = FindObjectsOfType<Rigidbody>().ToDictionary(rb => rb, _ => globalGravityMode);
 
-        
+        var bodiesToInvert = Bodies.Where(_ => _.Key.useGravity).ToDictionary(x=>x.Key,x=>x.Value);
         //TEMPORARY HACK
-        foreach (var body in Bodies.Where(_ => _.Key.useGravity))
+        foreach (var key in bodiesToInvert.Keys)
         {
-            Bodies[body.Key] = GravityMode.ToCenter;
+            Bodies[key] = GravityMode.ToCenter;
         }
     }
 

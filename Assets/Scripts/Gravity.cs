@@ -30,6 +30,13 @@ public class Gravity : MonoBehaviour
 
         DontDestroyOnLoad(gameObject);
         Bodies = FindObjectsOfType<Rigidbody>().ToDictionary(rb => rb, _ => globalGravityMode);
+
+        
+        //TEMPORARY HACK
+        foreach (var body in Bodies.Where(_ => _.Key.useGravity))
+        {
+            Bodies[body.Key] = GravityMode.ToCenter;
+        }
     }
 
     private void FixedUpdate()
@@ -49,6 +56,7 @@ public class Gravity : MonoBehaviour
         {
             Bodies[rb.Key] = gm;
         }
+
         globalGravityMode = gm;
     }
 }

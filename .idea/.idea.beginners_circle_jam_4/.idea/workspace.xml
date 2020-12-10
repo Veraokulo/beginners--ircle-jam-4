@@ -28,16 +28,10 @@
     <list default="true" id="86456c84-e1ad-479c-8e4f-3f4a457fdc22" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.beginners_circle_jam_4/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.beginners_circle_jam_4/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.beginners_circle_jam_4/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.beginners_circle_jam_4/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AnimatorControllers/PlayerAnimatorController.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AnimatorControllers/PlayerAnimatorController.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Main Camera.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Main Camera.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/hero_model.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/hero_model.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/hero_model.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/hero_model.fbx.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/VeraokulosTestingScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/VeraokulosTestingScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CameraFolower.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CameraFolower.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GravityGun.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GravityGun.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +48,9 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/FAA55637-FCC1-4BBF-B146-E6835A4641D9/f4/dc7cf5cd/RigidbodyConstraints.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/526469D5-A48C-43EE-BD9A-F19F8745AFA1/aa/c125f15b/Debug.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/FAA55637-FCC1-4BBF-B146-E6835A4641D9/9b/58c7e0ce/Rigidbody.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ElectricCabel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/526469D5-A48C-43EE-BD9A-F19F8745AFA1/c1/3de90881/Time.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/HealthBar.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -67,9 +63,11 @@
         <option value="$PROJECT_DIR$/Assets/q.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CameraFolower.cs" />
         <option value="$PROJECT_DIR$/Assets/GravityGun.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Gravity.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GravityGun.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Gravity.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ElectricCabel.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player.cs" />
+        <option value="$PROJECT_DIR$/Assets/HealthBar.cs" />
       </list>
     </option>
   </component>
@@ -134,7 +132,7 @@
       <workItem from="1607202722145" duration="1653000" />
       <workItem from="1607204418612" duration="2906000" />
       <workItem from="1607273384726" duration="37966000" />
-      <workItem from="1607610701633" duration="123000" />
+      <workItem from="1607610701633" duration="3900000" />
     </task>
     <servers />
   </component>

@@ -6,7 +6,7 @@ using UnityEngine;
 public class Player : Singleton<Player>
 {
     public float Health = 100f;
-    public float Oxygen = 0f;
+    public float Oxygen = 200f;
     private Rigidbody _rb;
     public GameObject graphics;
     public Animator animator;
@@ -33,11 +33,13 @@ public class Player : Singleton<Player>
     private static readonly int Jump = Animator.StringToHash("jump");
     public List<int> Keys;
 
-    private void Awake()
+    private void Start()
     {
         _rb = GetComponent<Rigidbody>();
         _collider = GetComponent<Collider>();
         _distanceToTheGround = _collider.bounds.extents.y;
+        HealthBar.SetHealth(Health);
+        OxygenBar.SetOxygen(Oxygen);
     }
 
     private void Update()

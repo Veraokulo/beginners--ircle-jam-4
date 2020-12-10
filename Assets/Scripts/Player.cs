@@ -1,57 +1,52 @@
 ﻿using UnityEngine;
 
-//[RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(Rigidbody))]
 public class Player : MonoBehaviour
 {
-    public enum GravityMode
-    {
-        None,
-        FromCenter,
-        ToCenter
-    }
-
     private Rigidbody _rb;
     public GameObject graphics;
     public Animator animator;
+    [Range(0, 10)] public float rotationSpeed = 5f;
 
-    [Min(0)] public float gravity = 3f;
-    public GravityMode gravityMode = GravityMode.FromCenter;
-    [Range(0, 15)] public float rotationSpeed = 10f;
-
-
-    private bool _isChangingGravityDirection;
     private bool _jump;
     [Min(0)] public float jumpForce = 50f;
     [Min(0)] public float speed = 30f;
 
     private float _distanceToTheGround;
+    private Collider _collider;
 
     private bool IsGrounded =>
         Physics.Raycast(transform.position, -transform.up, out var hit,
             _distanceToTheGround + 0.05f);
 
-    private bool isResized;
+    private bool _isResized;
     public float resizingScale = 2f;
+    private static readonly int Speed = Animator.StringToHash("speed");
+    private static readonly int IsZeroGravity = Animator.StringToHash("isZeroGravity");
+    private static readonly int Grounded = Animator.StringToHash("isGrounded");
+    private static readonly int Jump = Animator.StringToHash("jump");
 
     private void Awake()
     {
         _rb = GetComponent<Rigidbody>();
-        _distanceToTheGround = GetComponent<Collider>().bounds.extents.y;
+        _collider = GetComponent<Collider>();
+        _distanceToTheGround = _collider.bounds.extents.y;
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.I))
+        if (Input.GetKeyDown(KeyCode.C))
         {
-            if (gravityMode == GravityMode.FromCenter)
-                gravityMode = GravityMode.ToCenter;
-            if (gravityMode == GravityMode.ToCenter)
-                gravityMode = GravityMode.FromCenter;
-
-            _isChangingGravityDirection = true;
+            switch (Gravity.Instance.Bodies[_rb])
+            {
+                case Gravity.GravityMode.FromCenter:
+                    Gravity.Instance.Bodies[_rb] = Gravity.GravityMode.ToCenter;
+                    break;
+                case Gravity.GravityMode.ToCenter:
+                    Gravity.Instance.Bodies[_rb] = Gravity.GravityMode.FromCenter;
+                    break;
+            }
         }
-
-        if (Input.GetKeyDown(KeyCode.N)) gravityMode = GravityMode.None;
 
         if (Input.GetButtonDown("Jump") && IsGrounded) _jump = true;
         if (Input.GetAxisRaw("Horizontal") != 0)
@@ -61,8 +56,9 @@ public class Player : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.R))
         {
-            transform.localScale *= isResized ? resizingScale : 1/resizingScale;
-            isResized = !isResized;
+            transform.localScale *= _isResized ? resizingScale : 1 / resizingScale;
+            _distanceToTheGround *= _isResized ? resizingScale : 1 / resizingScale;
+            _isResized = !_isResized;
         }
     }
 
@@ -70,12 +66,13 @@ public class Player : MonoBehaviour
     private void FixedUpdate()
     {
         Vector3 upDirection;
-        switch (gravityMode)
+        var gravity = Gravity.Instance.Bodies[_rb];
+        switch (gravity)
         {
-            case GravityMode.FromCenter:
+            case Gravity.GravityMode.FromCenter:
                 upDirection = -transform.position.normalized;
                 break;
-            case GravityMode.ToCenter:
+            case Gravity.GravityMode.ToCenter:
                 upDirection = transform.position.normalized;
                 break;
             default:
@@ -85,60 +82,37 @@ public class Player : MonoBehaviour
 
         var leftDirection = (Vector3) Vector2.Perpendicular(upDirection);
 
-
         #region Rotation
 
-        if (gravityMode != GravityMode.None)
+        if (gravity != Gravity.GravityMode.None)
         {
-            var newZRotation = gravityMode == GravityMode.FromCenter ? 180f : 360f;
-            newZRotation -= Mathf.Atan2(transform.position.x, transform.position.y) * Mathf.Rad2Deg;
-            var newRotation = Quaternion.Euler(0, 0, newZRotation);
-
-            if (_isChangingGravityDirection)
-            {
-                transform.rotation =
-                    Quaternion.Slerp(transform.rotation, newRotation, Time.fixedDeltaTime * rotationSpeed);
-                _isChangingGravityDirection = !IsGrounded;
-            }
-            else
-            {
-                transform.rotation = newRotation;
-            }
+            var newRotation = Quaternion.Euler(0, 0,
+                Vector3.SignedAngle(Vector3.up, upDirection, Vector3.forward));
+            transform.rotation =
+                Quaternion.Slerp(transform.rotation, newRotation, Time.fixedDeltaTime * rotationSpeed);
         }
 
         #endregion
 
         #region Velocity change
 
-        var oldVerticalVelocity = Vector3.zero;
-        if (gravityMode != GravityMode.None) oldVerticalVelocity = Vector3.Project(_rb.velocity, upDirection);
+        var vertical = gravity == Gravity.GravityMode.None
+            ? transform.up * (Input.GetAxis("Vertical") * speed)
+            : Vector3.Project(_rb.velocity, upDirection);
 
-        var newVerticalVelocity = Vector3.zero;
-        switch (gravityMode)
+        if (_jump && gravity != Gravity.GravityMode.None)
         {
-            case GravityMode.FromCenter:
-            case GravityMode.ToCenter:
-                newVerticalVelocity = -upDirection * gravity;
-                break;
-            case GravityMode.None:
-                newVerticalVelocity = transform.up * (Input.GetAxis("Vertical") * speed);
-                break;
-        }
-
-        if (_jump)
-        {
-            newVerticalVelocity += upDirection * jumpForce;
+            vertical += upDirection * jumpForce;
             _jump = false;
-            animator.SetTrigger("jump");
+            animator.SetTrigger(Jump);
         }
-
-        animator.SetBool("isGrounded", IsGrounded);
 
         var horizontal = leftDirection * -(Input.GetAxis("Horizontal") * speed);
-        animator.SetFloat("speed", horizontal.magnitude);
-        animator.SetBool("isZeroGravity", gravityMode == GravityMode.None);
+        animator.SetFloat(Speed, horizontal.magnitude);
+        animator.SetBool(IsZeroGravity, gravity == Gravity.GravityMode.None);
+        animator.SetBool(Grounded, IsGrounded);
 
-        _rb.velocity = horizontal + newVerticalVelocity + oldVerticalVelocity;
+        _rb.velocity = horizontal + vertical;
 
         #endregion
     }

@@ -1013,9 +1013,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   graphics: {fileID: 5947795228515515457}
   animator: {fileID: 5947795228515515462}
-  gravity: 3
-  gravityMode: 1
-  rotationSpeed: 10
+  rotationSpeed: 5
   jumpForce: 50
   speed: 30
   resizingScale: 1.5

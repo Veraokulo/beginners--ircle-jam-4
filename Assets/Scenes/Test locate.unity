@@ -6910,6 +6910,7 @@ MonoBehaviour:
     be. There is no way to survive with you on the ship, furthermore there is no
     need.
   dialogueDuration: 10
+  isBoss: 0
 --- !u!65 &241731231
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7116,6 +7117,7 @@ MonoBehaviour:
     It''s a space station
     recently captured by AI'
   dialogueDuration: 7
+  isBoss: 0
 --- !u!65 &242261323
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -28444,6 +28446,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 933229909}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &933755394 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1026206116792761934, guid: c5124a1fff748ae40b76c0bda36de5f0,
+    type: 3}
+  m_PrefabInstance: {fileID: 1221057723}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &942892682 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 6c9de2606a55e3c4f91421fddf0b4f69,
@@ -28470,6 +28478,7 @@ MonoBehaviour:
   DPS: 8
   DialogText: Let's check your reaction. Catch the object!
   dialogueDuration: 6
+  isBoss: 0
 --- !u!65 &942892684
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -34267,6 +34276,7 @@ MonoBehaviour:
     play with her a little bit later but remember your mouse will
     not let you down, I hope you have the working one :)'
   dialogueDuration: 15
+  isBoss: 0
 --- !u!54 &1150988365
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -37220,6 +37230,50 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1047723778}
     m_Modifications:
+    - target: {fileID: 301625320, guid: c5124a1fff748ae40b76c0bda36de5f0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2142350754}
+    - target: {fileID: 301625320, guid: c5124a1fff748ae40b76c0bda36de5f0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Restart
+      objectReference: {fileID: 0}
+    - target: {fileID: 422400868, guid: c5124a1fff748ae40b76c0bda36de5f0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2142350754}
+    - target: {fileID: 422400868, guid: c5124a1fff748ae40b76c0bda36de5f0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Quit
+      objectReference: {fileID: 0}
+    - target: {fileID: 1136230131, guid: c5124a1fff748ae40b76c0bda36de5f0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2142350754}
+    - target: {fileID: 1136230131, guid: c5124a1fff748ae40b76c0bda36de5f0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Restart
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216971250, guid: c5124a1fff748ae40b76c0bda36de5f0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2142350754}
+    - target: {fileID: 1216971250, guid: c5124a1fff748ae40b76c0bda36de5f0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Resume
+      objectReference: {fileID: 0}
+    - target: {fileID: 1377757646, guid: c5124a1fff748ae40b76c0bda36de5f0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2142350754}
+    - target: {fileID: 1377757646, guid: c5124a1fff748ae40b76c0bda36de5f0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Quit
+      objectReference: {fileID: 0}
+    - target: {fileID: 1707258760, guid: c5124a1fff748ae40b76c0bda36de5f0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1718820761, guid: c5124a1fff748ae40b76c0bda36de5f0, type: 3}
       propertyPath: m_FontData.m_FontSize
       value: 15
@@ -37240,15 +37294,40 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4165447160873428463, guid: c5124a1fff748ae40b76c0bda36de5f0,
+    - target: {fileID: 1026206116792761934, guid: c5124a1fff748ae40b76c0bda36de5f0,
         type: 3}
-      propertyPath: m_AnchorMax.x
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4165447160873428463, guid: c5124a1fff748ae40b76c0bda36de5f0,
         type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4165447160873428463, guid: c5124a1fff748ae40b76c0bda36de5f0,
+        type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5628005055758820105, guid: c5124a1fff748ae40b76c0bda36de5f0,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2142350754}
+    - target: {fileID: 5628005055758820105, guid: c5124a1fff748ae40b76c0bda36de5f0,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Restart
+      objectReference: {fileID: 0}
+    - target: {fileID: 7132944787221078458, guid: c5124a1fff748ae40b76c0bda36de5f0,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2142350754}
+    - target: {fileID: 7132944787221078458, guid: c5124a1fff748ae40b76c0bda36de5f0,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Quit
       objectReference: {fileID: 0}
     - target: {fileID: 8189430371274860848, guid: c5124a1fff748ae40b76c0bda36de5f0,
         type: 3}
@@ -40461,6 +40540,10 @@ PrefabInstance:
       propertyPath: message
       value: 
       objectReference: {fileID: 1494047183}
+    - target: {fileID: 1657954019, guid: 84c3ce8bfba191440b5a6e2a219e4dfd, type: 3}
+      propertyPath: VictoryMenu
+      value: 
+      objectReference: {fileID: 933755394}
     - target: {fileID: 1647353821079111608, guid: 84c3ce8bfba191440b5a6e2a219e4dfd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -44963,6 +45046,7 @@ MonoBehaviour:
   DPS: 10
   DialogText: Let's check your reaction. Catch the object!
   dialogueDuration: 6
+  isBoss: 0
 --- !u!1001 &1426604310
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -61818,6 +61902,7 @@ MonoBehaviour:
   DPS: 8
   DialogText: Let's check your reaction. Catch the object!
   dialogueDuration: 6
+  isBoss: 0
 --- !u!54 &2034645771
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -65047,6 +65132,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2135849407}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2142350754 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1657954019, guid: 84c3ce8bfba191440b5a6e2a219e4dfd,
+    type: 3}
+  m_PrefabInstance: {fileID: 1306006734}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2700615319575524fa082c073f62506f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2146194422
 PrefabInstance:
   m_ObjectHideFlags: 0

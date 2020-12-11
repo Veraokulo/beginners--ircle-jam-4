@@ -24,7 +24,8 @@ public class Enemy : MonoBehaviour
     private void Start()
     {
         _rb = GetComponent<Rigidbody>();
-        loot.SetActive(false);
+        if (loot != null)
+            loot.SetActive(false);
     }
 
     private void FixedUpdate()
@@ -87,7 +88,7 @@ public class Enemy : MonoBehaviour
         GameManager.Instance.SetColorFilter(Color.red);
         if (Health <= 0)
         {
-            if(isBoss)
+            if (isBoss)
                 GameManager.Instance.Victory();
             Die();
         }
@@ -134,9 +135,13 @@ public class Enemy : MonoBehaviour
     {
         GameManager.Instance.Gravity.Bodies.Remove(_rb);
         Destroy(gameObject);
-        var gObj = Instantiate(loot, transform.position, transform.rotation);
-        gObj.SetActive(true);
-        Debug.Log(gameObject.name + "DIED!!!");
+        if (loot != null)
+        {
+            var gObj = Instantiate(loot, transform.position, transform.rotation);
+            gObj.SetActive(true);
+        }
+
+        Debug.Log(gameObject.name + " DIED!!!");
     }
 
     private void OnDrawGizmosSelected()

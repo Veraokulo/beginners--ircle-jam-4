@@ -6,7 +6,7 @@ using UnityEngine;
 public class Player : Singleton<Player>
 {
     public float Health = 100f;
-    public float Oxygen = 0f;
+    public float Oxygen = 200f;
     private Rigidbody _rb;
     public GameObject graphics;
     public Animator animator;
@@ -33,11 +33,13 @@ public class Player : Singleton<Player>
     private static readonly int Jump = Animator.StringToHash("jump");
     public List<int> Keys;
 
-    private void Awake()
+    private void Start()
     {
         _rb = GetComponent<Rigidbody>();
         _collider = GetComponent<Collider>();
         _distanceToTheGround = _collider.bounds.extents.y;
+        HealthBar.SetHealth(Health);
+        OxygenBar.SetOxygen(Oxygen);
     }
 
     private void Update()
@@ -95,8 +97,9 @@ public class Player : Singleton<Player>
         {
             var newRotation = Quaternion.Euler(0, 0,
                 Vector3.SignedAngle(Vector3.up, upDirection, Vector3.forward));
-            transform.rotation =
-                Quaternion.Slerp(transform.rotation, newRotation, Time.fixedDeltaTime * rotationSpeed);
+            transform.rotation = Mathf.Abs(newRotation.eulerAngles.z - transform.rotation.eulerAngles.z) > 10f
+                ? Quaternion.Slerp(transform.rotation, newRotation, Time.fixedDeltaTime * rotationSpeed)
+                : newRotation;
         }
 
         #endregion

@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class Space : MonoBehaviour
+public class OpenSpace : MonoBehaviour
 {
     private bool _isPlayerInOpenSpace;
     [Min(0)] public float oxygenConsumptionPerSecond;

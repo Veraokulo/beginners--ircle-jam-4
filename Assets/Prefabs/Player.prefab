@@ -978,7 +978,7 @@ GameObject:
   - component: {fileID: 5947795227930859911}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1011,12 +1011,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 770b02bb8a4dbf54c9f576336d76ac8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Health: 100
+  Oxygen: 0
   graphics: {fileID: 5947795228515515457}
   animator: {fileID: 5947795228515515462}
+  HealthBar: {fileID: 0}
+  OxygenBar: {fileID: 0}
   rotationSpeed: 5
   jumpForce: 50
   speed: 30
   resizingScale: 1.5
+  Keys: 
 --- !u!136 &5947795227930859908
 CapsuleCollider:
   m_ObjectHideFlags: 0

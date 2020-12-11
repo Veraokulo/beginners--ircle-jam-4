@@ -10,8 +10,8 @@ public class OxygenBar : MonoBehaviour
     {
         slider.value = oxygen;
         var baloonCount = (int) oxygen / 100;
-        text.text = baloonCount > 0 ? baloonCount + " X Baloons + " : "";
+        text.text = baloonCount > 0 ? baloonCount + " X Baloons " : "";
         var rest = oxygen % 100;
-        text.text += rest > 0 ? rest + "%" : "";
+        text.text += rest > 0 ? $" + {rest}%" : "";
     }
 }

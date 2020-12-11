@@ -97,8 +97,9 @@ public class Player : Singleton<Player>
         {
             var newRotation = Quaternion.Euler(0, 0,
                 Vector3.SignedAngle(Vector3.up, upDirection, Vector3.forward));
-            transform.rotation =
-                Quaternion.Slerp(transform.rotation, newRotation, Time.fixedDeltaTime * rotationSpeed);
+            transform.rotation = Mathf.Abs(newRotation.eulerAngles.z - transform.rotation.eulerAngles.z) > 10f
+                ? Quaternion.Slerp(transform.rotation, newRotation, Time.fixedDeltaTime * rotationSpeed)
+                : newRotation;
         }
 
         #endregion

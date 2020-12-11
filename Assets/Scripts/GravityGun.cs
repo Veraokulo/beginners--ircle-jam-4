@@ -5,13 +5,14 @@ using UnityEngine;
 
 public class GravityGun : MonoBehaviour
 {
-    public float force = 8f;
+    public float forceToCenter = 8f;
+    public float forceToShoot = 20f;
     private Plane _plane;
     public List<Rigidbody> rigidbodies = new List<Rigidbody>();
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.attachedRigidbody)
+        if (other.attachedRigidbody && !other.CompareTag(Enemy.TAG))
         {
             rigidbodies.Add(other.attachedRigidbody);
         }
@@ -42,16 +43,16 @@ public class GravityGun : MonoBehaviour
         if (Input.GetMouseButton(0))
         {
             foreach (var rb in rigidbodies)
-            {    
-                rb.velocity = (transform.position - rb.transform.position) * force; 
+            {
+                rb.velocity = (transform.position - rb.transform.position) * forceToCenter;
             }
         }
-        
+
         if (Input.GetMouseButton(1))
         {
             foreach (var rb in rigidbodies)
             {
-                rb.AddForce((rb.transform.position-transform.parent.parent.position) * force);
+                rb.AddForce((rb.transform.position - transform.parent.parent.position) * forceToShoot);
             }
         }
     }

@@ -5,25 +5,20 @@ public class ElectricCabel : MonoBehaviour
 {
     public float DPS;
     private Collider _collider;
-    private Player _player;
     private bool isIntersecting = false;
 
-    private void Start()
-    {
-        _player = FindObjectOfType<Player>();
-    }
 
     private void FixedUpdate()
     {
         if (isIntersecting)
         {
-            _player.TakeDamage(DPS * Time.fixedDeltaTime);
+            Player.Instance.TakeDamage(DPS * Time.fixedDeltaTime);
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.TryGetComponent(typeof(Player),out var q))
+        if(other.gameObject == Player.Instance.gameObject)
         {
             isIntersecting = true;
         }
@@ -31,7 +26,7 @@ public class ElectricCabel : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if(other.TryGetComponent(typeof(Player),out var q))
+        if(other.gameObject == Player.Instance.gameObject)
         {
             isIntersecting = false;
         }

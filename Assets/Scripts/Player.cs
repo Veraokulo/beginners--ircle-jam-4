@@ -140,6 +140,12 @@ public class Player : MonoBehaviour
         }
     }
 
+    public void AddOxygen(float oxygen)
+    {
+        Oxygen += oxygen;
+        OxygenBar.SetOxygen(Oxygen);
+    }
+
     public void TakeOxygen(float oxygen)
     {
         Oxygen -= oxygen;

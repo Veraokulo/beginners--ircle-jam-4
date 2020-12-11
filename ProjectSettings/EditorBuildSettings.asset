@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/VeraokulosTestingScene.unity
     guid: 098d271e805628d4a91d87a56612533e
   - enabled: 1
-    path: Assets/Scenes/Test locate.unity
+    path: Assets/Scenes/MainScene.unity
     guid: 02eeee925706163419f832420eccfd0b
   m_configObjects: {}

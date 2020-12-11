@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.Collections;
 using UnityEngine;
 
 
@@ -17,6 +17,8 @@ public class Enemy : MonoBehaviour
     private bool isPlayerNear;
     [TextArea] public string DialogText = "sample text";
     private bool isDialogueEnd;
+    private Coroutine _dialogueDelayCoroutine;
+    public float dialogueDuration = 3f;
 
     private void Start()
     {
@@ -95,13 +97,26 @@ public class Enemy : MonoBehaviour
         {
             if (!isDialogueEnd)
             {
-                isDialogueEnd = true;
-                Debug.Log(DialogText);
-                GameManager.Instance.ShowMessage(DialogText, 3f);
+                if (_dialogueDelayCoroutine == null)
+                {
+                    _dialogueDelayCoroutine = StartCoroutine(SetDialogueEndWithDelay());
+                    GameManager.Instance.ShowMessage(DialogText, dialogueDuration);
+                }
             }
-
-            isPlayerNear = true;
+            else
+            {
+                isPlayerNear = true;
+            }
         }
+    }
+
+    private IEnumerator SetDialogueEndWithDelay()
+    {
+        yield return new WaitForSeconds(dialogueDuration);
+        isDialogueEnd = true;
+        if ((Player.Instance.transform.position - transform.position).magnitude < 15f)
+            isPlayerNear = true;
+        yield return null;
     }
 
     private void OnTriggerExit(Collider other)

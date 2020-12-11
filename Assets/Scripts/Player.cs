@@ -151,6 +151,7 @@ public class Player : Singleton<Player>
 
     private void Die()
     {
-        Debug.Log("DIED!!!");
+        GameManager.Instance.ShowMessage("YOU DIED!");
+        GameManager.Instance.GameOver();
     }
 }

@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
@@ -66,5 +64,10 @@ public class GameManager : Singleton<GameManager>
         yield return new WaitForSeconds(time);
         filterImage.enabled = false;
         yield return null;
+    }
+
+    public void GameOver()
+    {
+        throw new System.NotImplementedException();
     }
 }

@@ -136,11 +136,6 @@ public class Enemy : MonoBehaviour
         Debug.Log(gameObject.name + "DIED!!!");
     }
 
-    private void OnDestroy()
-    {
-        Debug.Log(transform.position);
-    }
-
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;

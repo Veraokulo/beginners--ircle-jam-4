@@ -15261,6 +15261,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1677710364}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &530983277 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1732315591613468959, guid: 319df1d5aa6bcfa49b7d2fcb2d79b733,
+    type: 3}
+  m_PrefabInstance: {fileID: 1666150715}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d9ea2d5350e50849bb53e0ed8e13550, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &531507847
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28473,7 +28485,7 @@ MonoBehaviour:
   Health: 400
   loot: {fileID: 1838516748}
   speed: 10
-  healthBar: {fileID: 0}
+  healthBar: {fileID: 530983277}
   attackRadius: 6.6
   DPS: 8
   DialogText: Let's check your reaction. Catch the object!

@@ -12,7 +12,7 @@ public class GravityGun : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.attachedRigidbody && !other.CompareTag(Enemy.TAG))
+        if (other.attachedRigidbody && !other.CompareTag(Enemy.Tag))
         {
             rigidbodies.Add(other.attachedRigidbody);
         }

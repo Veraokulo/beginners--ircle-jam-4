@@ -13,7 +13,7 @@ public class Ball : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.CompareTag(Enemy.TAG))
+        if (other.gameObject.CompareTag(Enemy.Tag))
         {
             other.gameObject.GetComponent<Enemy>().TakeDamage(damage);
         }

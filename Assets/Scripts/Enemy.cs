@@ -1,24 +1,17 @@
-﻿using System.Collections;
-using UnityEngine;
-
+﻿using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(Collider))]
-public class Enemy : MonoBehaviour
+public class Enemy : NPC
 {
-    public const string TAG = "Enemy";
-    public float Health = 100f;
+    public const string Tag = "Enemy";
+    public float health = 100f;
     public GameObject loot;
     public float speed = 30f;
     private Rigidbody _rb;
     public HealthBar healthBar;
     public float attackRadius;
-    public float DPS = 20f;
-    private bool isPlayerNear;
-    [TextArea] public string DialogText = "sample text";
-    private bool isDialogueEnd;
-    private Coroutine _dialogueDelayCoroutine;
-    public float dialogueDuration = 3f;
+    public float dps = 20f;
     public bool isBoss;
 
     private void Start()
@@ -26,8 +19,8 @@ public class Enemy : MonoBehaviour
         _rb = GetComponent<Rigidbody>();
         if (healthBar != null)
         {
-            healthBar.SetMaxHealth(Health);
-            healthBar.SetHealth(Health);
+            healthBar.SetMaxHealth(health);
+            healthBar.SetHealth(health);
         }
 
         if (loot != null)
@@ -39,7 +32,7 @@ public class Enemy : MonoBehaviour
         var vectorToPlayer = GameManager.Instance.Player.transform.position - transform.position;
         if (isPlayerNear && vectorToPlayer.magnitude < attackRadius)
         {
-            GameManager.Instance.Player.TakeDamage(DPS * Time.fixedDeltaTime);
+            GameManager.Instance.Player.TakeDamage(dps * Time.fixedDeltaTime);
         }
 
         Vector3 upDirection;
@@ -89,51 +82,14 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        Health -= damage;
-        healthBar.SetHealth(Health);
+        health -= damage;
+        healthBar.SetHealth(health);
         GameManager.Instance.SetColorFilter(Color.red);
-        if (Health <= 0)
+        if (health <= 0)
         {
             if (isBoss)
                 GameManager.Instance.Victory();
             Die();
-        }
-    }
-
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject == GameManager.Instance.Player.gameObject)
-        {
-            if (!isDialogueEnd)
-            {
-                if (_dialogueDelayCoroutine == null)
-                {
-                    _dialogueDelayCoroutine = StartCoroutine(SetDialogueEndWithDelay());
-                    GameManager.Instance.ShowMessage(DialogText, dialogueDuration);
-                }
-            }
-            else
-            {
-                isPlayerNear = true;
-            }
-        }
-    }
-
-    private IEnumerator SetDialogueEndWithDelay()
-    {
-        yield return new WaitForSeconds(dialogueDuration);
-        isDialogueEnd = true;
-        if ((GameManager.Instance.Player.transform.position - transform.position).magnitude < 15f)
-            isPlayerNear = true;
-        yield return null;
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject == GameManager.Instance.Player.gameObject)
-        {
-            isPlayerNear = false;
         }
     }
 

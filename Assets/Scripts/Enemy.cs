@@ -24,8 +24,12 @@ public class Enemy : MonoBehaviour
     private void Start()
     {
         _rb = GetComponent<Rigidbody>();
-        healthBar.SetMaxHealth(Health);
-        healthBar.SetHealth(Health);
+        if (healthBar != null)
+        {
+            healthBar.SetMaxHealth(Health);
+            healthBar.SetHealth(Health);
+        }
+
         if (loot != null)
             loot.SetActive(false);
     }

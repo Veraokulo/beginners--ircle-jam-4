@@ -17,6 +17,7 @@ public class GameManager : Singleton<GameManager>
     private Coroutine _messageCoroutine;
     public GameObject GameOverMenu;
     public GameObject PauseMenu;
+    public GameObject VictoryMenu;
     private bool isPaused;
 
     private void Start()
@@ -114,5 +115,11 @@ public class GameManager : Singleton<GameManager>
     public void Quit()
     {
         Application.Quit();
+    }
+
+
+    public void Victory()
+    {
+        VictoryMenu.SetActive(true);
     }
 }

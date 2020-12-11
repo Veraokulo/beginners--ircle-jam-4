@@ -19,6 +19,7 @@ public class Enemy : MonoBehaviour
     private bool isDialogueEnd;
     private Coroutine _dialogueDelayCoroutine;
     public float dialogueDuration = 3f;
+    public bool isBoss;
 
     private void Start()
     {
@@ -86,6 +87,8 @@ public class Enemy : MonoBehaviour
         GameManager.Instance.SetColorFilter(Color.red);
         if (Health <= 0)
         {
+            if(isBoss)
+                GameManager.Instance.Victory();
             Die();
         }
     }

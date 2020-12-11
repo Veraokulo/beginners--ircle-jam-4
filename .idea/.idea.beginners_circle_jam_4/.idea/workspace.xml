@@ -26,19 +26,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="86456c84-e1ad-479c-8e4f-3f4a457fdc22" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.beginners_circle_jam_4/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.beginners_circle_jam_4/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.beginners_circle_jam_4/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.beginners_circle_jam_4/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Models/hero_model.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/hero_model.fbx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Models/hero_model.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/hero_model.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/HUD.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/HUD.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/VeraokulosTestingScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/VeraokulosTestingScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ElectricCabel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ElectricCabel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gate.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GravityGun.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GravityGun.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/HealthBar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/HealthBar.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/OxygenBar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/OxygenBar.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,8 +80,8 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/ElectricCabel.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Ball.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/OxygenBar.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GravityGun.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" />
       </list>
     </option>
   </component>
@@ -154,7 +146,7 @@
       <workItem from="1607202722145" duration="1653000" />
       <workItem from="1607204418612" duration="2906000" />
       <workItem from="1607273384726" duration="37966000" />
-      <workItem from="1607610701633" duration="25133000" />
+      <workItem from="1607610701633" duration="26410000" />
     </task>
     <servers />
   </component>
@@ -271,24 +263,5 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="943" y="315" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1607282464480" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Enemy.cs</url>
-          <line>97</line>
-          <properties documentPath="X:\Projects\beginners_circle_jam_4\Assets\Scripts\Enemy.cs" initialLine="96">
-            <startOffsets>
-              <option value="2653" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2674" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

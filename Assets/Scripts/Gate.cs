@@ -51,7 +51,7 @@ public class Gate : LinkedID
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject == Player.Instance.gameObject)
+        if (other.gameObject == GameManager.Instance.Player.gameObject)
         {
             isPlayerNear = true;
         }
@@ -59,7 +59,7 @@ public class Gate : LinkedID
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject == Player.Instance.gameObject)
+        if (other.gameObject == GameManager.Instance.Player.gameObject)
         {
             isPlayerNear = false;
         }

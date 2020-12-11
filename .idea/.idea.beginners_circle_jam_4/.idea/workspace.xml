@@ -27,11 +27,16 @@
   <component name="ChangeListManager">
     <list default="true" id="86456c84-e1ad-479c-8e4f-3f4a457fdc22" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.beginners_circle_jam_4/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.beginners_circle_jam_4/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/VeraokulosTestingScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/VeraokulosTestingScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ElectricCabel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ElectricCabel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gate.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gravity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gravity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Key.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Key.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/OpenSpace.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/OpenSpace.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Singleton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Singleton.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,22 +73,22 @@
         <option value="$PROJECT_DIR$/Assets/q.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CameraFolower.cs" />
         <option value="$PROJECT_DIR$/Assets/GravityGun.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Gravity.cs" />
         <option value="$PROJECT_DIR$/Assets/HealthBar.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Singleton.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ILinkedID.cs" />
         <option value="$PROJECT_DIR$/Assets/GameManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Key.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/OpenSpace.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/HealthBar.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Gate.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/ElectricCabel.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Ball.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/OxygenBar.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GravityGun.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Gate.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Key.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ElectricCabel.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/OpenSpace.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Gravity.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Singleton.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
       </list>
     </option>
   </component>
@@ -148,7 +153,7 @@
       <workItem from="1607202722145" duration="1653000" />
       <workItem from="1607204418612" duration="2906000" />
       <workItem from="1607273384726" duration="37966000" />
-      <workItem from="1607610701633" duration="28269000" />
+      <workItem from="1607610701633" duration="30071000" />
     </task>
     <servers />
   </component>
@@ -185,10 +190,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1027" y="545" key="ANALYSIS_DLG_com.jetbrains.rider.actions.impl.cleanup.RiderCodeCleanupAction$actionPerformed$dlg$1/0.0.2560.1400@0.0.2560.1400" timestamp="1607117380007" />
-    <state x="801" y="276" key="CommitChangelistDialog2" timestamp="1607469825907">
+    <state x="801" y="276" key="CommitChangelistDialog2" timestamp="1607658872991">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="801" y="276" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1607469825907" />
+    <state x="801" y="276" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1607658872991" />
     <state width="1280" height="527" key="GridCell.Tab.0.bottom" timestamp="1607649375377">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>

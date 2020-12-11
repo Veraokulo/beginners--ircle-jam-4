@@ -12,13 +12,13 @@ public class ElectricCabel : MonoBehaviour
     {
         if (isIntersecting)
         {
-            Player.Instance.TakeDamage(DPS * Time.fixedDeltaTime);
+            GameManager.Instance.Player.TakeDamage(DPS * Time.fixedDeltaTime);
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject == Player.Instance.gameObject)
+        if(other.gameObject == GameManager.Instance.Player.gameObject)
         {
             isIntersecting = true;
         }
@@ -26,7 +26,7 @@ public class ElectricCabel : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if(other.gameObject == Player.Instance.gameObject)
+        if(other.gameObject == GameManager.Instance.Player.gameObject)
         {
             isIntersecting = false;
         }

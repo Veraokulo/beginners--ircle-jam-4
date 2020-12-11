@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Gravity : MonoBehaviour
 {
-    public static Gravity Instance;
-
     public enum GravityMode
     {
         None,
@@ -19,16 +17,7 @@ public class Gravity : MonoBehaviour
 
     private void Start()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-        else if (Instance == this)
-        {
-            Destroy(gameObject);
-        }
-
-        DontDestroyOnLoad(gameObject);
+        GameManager.Instance.Gravity = this;
         Bodies = FindObjectsOfType<Rigidbody>().ToDictionary(rb => rb, _ => globalGravityMode);
 
         var bodiesToInvert = Bodies.Where(_ => _.Key.useGravity).ToDictionary(x=>x.Key,x=>x.Value);

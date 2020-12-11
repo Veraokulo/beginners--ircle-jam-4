@@ -7,7 +7,7 @@ public class Key : LinkedID
     {
         if (other.TryGetComponent<Player>(out var q))
         {
-            Player.Instance.Keys.Add(id);
+            GameManager.Instance.Player.Keys.Add(id);
             GameManager.Instance.UpdateKeysInfo();
             GameManager.Instance.ShowMessage("You picked up key № " + id);
             Destroy(gameObject);

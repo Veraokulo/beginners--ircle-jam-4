@@ -1,22 +1,43 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : Singleton<GameManager>
 {
+    public Player Player;
+    public Gravity Gravity;
     public Text keysInfo;
 
     public Text message;
     public Image filterImage;
     private Coroutine _filterCoroutine;
     private Coroutine _messageCoroutine;
-
+    public GameObject GameOverMenu;
+    public GameObject PauseMenu;
+    private bool isPaused;
 
     private void Start()
     {
         CheckIDs<Key>();
         CheckIDs<Gate>();
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (isPaused)
+            {
+                Resume();
+            }
+            else
+            {
+                Pause();
+            }
+        }
     }
 
     private void CheckIDs<T>() where T : LinkedID
@@ -30,12 +51,12 @@ public class GameManager : Singleton<GameManager>
 
     public void UpdateKeysInfo()
     {
-        keysInfo.text = "Keys: " + string.Join(", ", Player.Instance.Keys);
+        keysInfo.text = "Keys: " + string.Join(", ", GameManager.Instance.Player.Keys);
     }
 
     public void ShowMessage(string messageText, float time = 1f)
     {
-        if(_messageCoroutine!=null)
+        if (_messageCoroutine != null)
             StopCoroutine(_messageCoroutine);
         _messageCoroutine = StartCoroutine(ShowMessageCoroutine(messageText, time));
     }
@@ -51,7 +72,7 @@ public class GameManager : Singleton<GameManager>
 
     public void SetColorFilter(Color color, float time = 0.1f)
     {
-        if(_filterCoroutine!=null)
+        if (_filterCoroutine != null)
             StopCoroutine(_filterCoroutine);
         _filterCoroutine = StartCoroutine(SetColorFilterCoroutine(color, time));
     }
@@ -68,6 +89,30 @@ public class GameManager : Singleton<GameManager>
 
     public void GameOver()
     {
-        throw new System.NotImplementedException();
+        GameOverMenu.SetActive(true);
+        Time.timeScale = 0f;
+    }
+
+    public void Pause()
+    {
+        PauseMenu.SetActive(true);
+        Time.timeScale = 0f;
+    }
+
+    public void Resume()
+    {
+        PauseMenu.SetActive(false);
+        Time.timeScale = 1f;
+    }
+
+    public void Restart()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(0);
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
     }
 }

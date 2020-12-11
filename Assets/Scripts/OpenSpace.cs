@@ -9,7 +9,7 @@ public class OpenSpace : MonoBehaviour
     {
         if (_isPlayerInOpenSpace)
         {
-            Player.Instance.TakeOxygen(oxygenConsumptionPerSecond * Time.fixedDeltaTime);
+            GameManager.Instance.Player.TakeOxygen(oxygenConsumptionPerSecond * Time.fixedDeltaTime);
         }
     }
 

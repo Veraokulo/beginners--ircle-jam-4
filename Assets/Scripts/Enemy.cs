@@ -28,14 +28,14 @@ public class Enemy : MonoBehaviour
 
     private void FixedUpdate()
     {
-        var vectorToPlayer = Player.Instance.transform.position - transform.position;
+        var vectorToPlayer = GameManager.Instance.Player.transform.position - transform.position;
         if (isPlayerNear && vectorToPlayer.magnitude < attackRadius)
         {
-            Player.Instance.TakeDamage(DPS * Time.fixedDeltaTime);
+            GameManager.Instance.Player.TakeDamage(DPS * Time.fixedDeltaTime);
         }
 
         Vector3 upDirection;
-        var gravity = Gravity.Instance.Bodies[_rb];
+        var gravity = GameManager.Instance.Gravity.Bodies[_rb];
         switch (gravity)
         {
             case Gravity.GravityMode.FromCenter:
@@ -93,7 +93,7 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject == Player.Instance.gameObject)
+        if (other.gameObject == GameManager.Instance.Player.gameObject)
         {
             if (!isDialogueEnd)
             {
@@ -114,14 +114,14 @@ public class Enemy : MonoBehaviour
     {
         yield return new WaitForSeconds(dialogueDuration);
         isDialogueEnd = true;
-        if ((Player.Instance.transform.position - transform.position).magnitude < 15f)
+        if ((GameManager.Instance.Player.transform.position - transform.position).magnitude < 15f)
             isPlayerNear = true;
         yield return null;
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject == Player.Instance.gameObject)
+        if (other.gameObject == GameManager.Instance.Player.gameObject)
         {
             isPlayerNear = false;
         }
@@ -129,7 +129,7 @@ public class Enemy : MonoBehaviour
 
     private void Die()
     {
-        Gravity.Instance.Bodies.Remove(_rb);
+        GameManager.Instance.Gravity.Bodies.Remove(_rb);
         Destroy(gameObject);
         var gObj = Instantiate(loot, transform.position, transform.rotation);
         gObj.SetActive(true);

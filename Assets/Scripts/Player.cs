@@ -3,7 +3,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(Collider))]
-public class Player : Singleton<Player>
+public class Player : MonoBehaviour
 {
     public float Health = 100f;
     public float Oxygen = 200f;
@@ -35,6 +35,7 @@ public class Player : Singleton<Player>
 
     private void Start()
     {
+        GameManager.Instance.Player = this;
         _rb = GetComponent<Rigidbody>();
         _collider = GetComponent<Collider>();
         _distanceToTheGround = _collider.bounds.extents.y;
@@ -46,13 +47,13 @@ public class Player : Singleton<Player>
     {
         if (Input.GetKeyDown(KeyCode.C))
         {
-            switch (Gravity.Instance.Bodies[_rb])
+            switch (GameManager.Instance.Gravity.Bodies[_rb])
             {
                 case Gravity.GravityMode.FromCenter:
-                    Gravity.Instance.Bodies[_rb] = Gravity.GravityMode.ToCenter;
+                    GameManager.Instance.Gravity.Bodies[_rb] = Gravity.GravityMode.ToCenter;
                     break;
                 case Gravity.GravityMode.ToCenter:
-                    Gravity.Instance.Bodies[_rb] = Gravity.GravityMode.FromCenter;
+                    GameManager.Instance.Gravity.Bodies[_rb] = Gravity.GravityMode.FromCenter;
                     break;
             }
         }
@@ -75,7 +76,7 @@ public class Player : Singleton<Player>
     private void FixedUpdate()
     {
         Vector3 upDirection;
-        var gravity = Gravity.Instance.Bodies[_rb];
+        var gravity = GameManager.Instance.Gravity.Bodies[_rb];
         switch (gravity)
         {
             case Gravity.GravityMode.FromCenter:

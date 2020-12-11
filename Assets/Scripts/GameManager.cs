@@ -28,7 +28,7 @@ public class GameManager : Singleton<GameManager>
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.P))
         {
             if (isPaused)
             {
@@ -98,12 +98,14 @@ public class GameManager : Singleton<GameManager>
     {
         PauseMenu.SetActive(true);
         Time.timeScale = 0f;
+        isPaused = true;
     }
 
     public void Resume()
     {
         PauseMenu.SetActive(false);
         Time.timeScale = 1f;
+        isPaused = false;
     }
 
     public void Restart()

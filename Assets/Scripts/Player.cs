@@ -39,6 +39,7 @@ public class Player : MonoBehaviour
         _rb = GetComponent<Rigidbody>();
         _collider = GetComponent<Collider>();
         _distanceToTheGround = _collider.bounds.extents.y;
+        HealthBar.SetMaxHealth(Health);
         HealthBar.SetHealth(Health);
         OxygenBar.SetOxygen(Oxygen);
     }

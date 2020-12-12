@@ -20,7 +20,7 @@ public class Gravity : MonoBehaviour
         GameManager.Instance.Gravity = this;
         Bodies = FindObjectsOfType<Rigidbody>().ToDictionary(rb => rb, _ => globalGravityMode);
 
-        var bodiesToInvert = Bodies.Where(_ => _.Key.useGravity).ToDictionary(x=>x.Key,x=>x.Value);
+        var bodiesToInvert = Bodies.Where(_ => _.Key.useGravity).ToDictionary(x => x.Key, x => x.Value);
         //TEMPORARY HACK
         foreach (var key in bodiesToInvert.Keys)
         {
@@ -32,10 +32,11 @@ public class Gravity : MonoBehaviour
     {
         foreach (var body in Bodies)
         {
+            Debug.DrawLine(Vector3.zero, body.Key.position);
             if (body.Value == GravityMode.FromCenter)
-                body.Key.AddForce(body.Key.transform.position.normalized * gravityForce, ForceMode.VelocityChange);
+                body.Key.AddForce(body.Key.position.normalized * gravityForce, ForceMode.VelocityChange);
             if (body.Value == GravityMode.ToCenter)
-                body.Key.AddForce(-body.Key.transform.position.normalized * gravityForce, ForceMode.VelocityChange);
+                body.Key.AddForce(-body.Key.position.normalized * gravityForce, ForceMode.VelocityChange);
         }
     }
 

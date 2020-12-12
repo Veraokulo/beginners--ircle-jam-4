@@ -6,13 +6,16 @@ using UnityEngine;
 public class GravityGun : MonoBehaviour
 {
     public float forceToCenter = 8f;
-    public float forceToShoot = 20f;
+    public float shootVelocity = 20f;
     private Plane _plane;
     public List<Rigidbody> rigidbodies = new List<Rigidbody>();
+    public float maxRadius = 5f;
+    [Range(0,1)]
+    public float smoothness = 1f;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.attachedRigidbody && !other.CompareTag(Enemy.Tag))
+        if (other.attachedRigidbody && !other.CompareTag(Enemy.Tag) && !other.CompareTag(Player.Tag))
         {
             rigidbodies.Add(other.attachedRigidbody);
         }
@@ -36,8 +39,9 @@ public class GravityGun : MonoBehaviour
         {
             var hitPoint = ray.GetPoint(enter);
             var localP = hitPoint - transform.parent.position;
-            var q = Mathf.Atan2(localP.y, localP.x) * Mathf.Rad2Deg;
-            transform.parent.rotation = Quaternion.Euler(0, 0, q);
+            if (localP.magnitude > maxRadius)
+                localP *= maxRadius / localP.magnitude;
+            transform.position = Vector3.Slerp(transform.position,GameManager.Instance.Player.transform.position + localP,smoothness);
         }
 
         if (Input.GetMouseButton(0))
@@ -50,9 +54,10 @@ public class GravityGun : MonoBehaviour
 
         if (Input.GetMouseButton(1))
         {
-            foreach (var rb in rigidbodies)
+            for (var i = rigidbodies.Count - 1; i >= 0; i--)
             {
-                rb.AddForce((rb.transform.position - transform.parent.parent.position) * forceToShoot);
+                rigidbodies[i].velocity = (rigidbodies[i].transform.position - transform.parent.position).normalized * shootVelocity;
+                rigidbodies.RemoveAt(i);
             }
         }
     }

@@ -84,7 +84,6 @@ public class Enemy : NPC
     {
         health -= damage;
         healthBar.SetHealth(health);
-        GameManager.Instance.SetColorFilter(Color.red);
         if (health <= 0)
         {
             if (isBoss)
@@ -99,7 +98,8 @@ public class Enemy : NPC
         Destroy(gameObject);
         if (loot != null)
         {
-            var gObj = Instantiate(loot, transform.position, transform.rotation);
+            var gObj = Instantiate(loot, transform.position, Quaternion.Euler(new Vector3(0, 180, 0)));
+            gObj.transform.localScale = Vector3.one * 0.3f;
             gObj.SetActive(true);
         }
 

@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Collider))]
 public class Player : MonoBehaviour
 {
+    public const string Tag = "Player";
     public float Health = 100f;
     public float Oxygen = 200f;
     private Rigidbody _rb;

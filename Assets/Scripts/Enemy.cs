@@ -86,8 +86,6 @@ public class Enemy : NPC
         healthBar.SetHealth(health);
         if (health <= 0)
         {
-            if (isBoss)
-                GameManager.Instance.Victory();
             Die();
         }
     }
@@ -102,6 +100,9 @@ public class Enemy : NPC
             gObj.transform.localScale = Vector3.one * 0.3f;
             gObj.SetActive(true);
         }
+
+        if (isBoss)
+            GameManager.Instance.Victory();
 
         Debug.Log(gameObject.name + " DIED!!!");
     }

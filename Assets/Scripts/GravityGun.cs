@@ -32,7 +32,7 @@ public class GravityGun : MonoBehaviour
         _plane = new Plane(Vector3.forward, Vector3.zero);
     }
 
-    public void Update()
+    public void FixedUpdate()
     {
         var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (_plane.Raycast(ray, out var enter))

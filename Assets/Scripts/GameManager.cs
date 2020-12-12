@@ -123,5 +123,6 @@ public class GameManager : Singleton<GameManager>
     public void Victory()
     {
         VictoryMenu.SetActive(true);
+        Time.timeScale = 0f;
     }
 }

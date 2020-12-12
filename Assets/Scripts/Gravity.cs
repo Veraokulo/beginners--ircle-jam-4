@@ -32,7 +32,6 @@ public class Gravity : MonoBehaviour
     {
         foreach (var body in Bodies)
         {
-            Debug.DrawLine(Vector3.zero, body.Key.position);
             if (body.Value == GravityMode.FromCenter)
                 body.Key.AddForce(body.Key.position.normalized * gravityForce, ForceMode.VelocityChange);
             if (body.Value == GravityMode.ToCenter)
